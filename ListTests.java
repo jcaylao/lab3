@@ -8,6 +8,16 @@ import org.junit.*;
 public class ListTests {
     
     @Test
+    public void testFilter() {
+        List<String> list = new ArrayList<>();
+        list.add("car");
+        list.add("house");
+        list.add("cat");
+
+        assertArrayEquals(new String[]{"car", "cat"}, ListExamples.filter(list, null));
+    }
+
+    @Test
     public void testMerge() {
         List<String> list1 = new ArrayList<>();
         list1.add("apple");
