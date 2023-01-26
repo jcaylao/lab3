@@ -8,17 +8,17 @@ import org.junit.*;
 public class ListTests {
     
     @Test
-    public void testFilter() {
+    public void testMerge() {
         List<String> list1 = new ArrayList<>();
         list1.add("apple");
         list1.add("banana");
-        list1.add("strawberry");
-        list1.add("kiwi");
 
         List<String> list2 = new ArrayList<>();
         list2.add("onion");
         list2.add("corn");
-        list2.add("lettuce");
-        list2.add("broccoli");
+
+        assertArrayEquals(new String[]{"apple", "appleonion", "onion", "onionbanana", 
+                                        "banana", "bananacorn", "corn"},
+                                        ListExamples.merge(list1, list2).toArray());
     }
 }
